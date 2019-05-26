@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+
+import Flat from './flat.jsx';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <div className="section-left" />
+        <div className="section-left">
+          <Flat />
+        </div>
         <div className="section-right" />
       </div>
     );
