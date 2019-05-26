@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const style = { backgroundImage: "url('https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/images/flat1.jpg')" };
+import flats from '../data/flats.js';
 
-const Flat = () => {
-  return (
-    <div className="flat">
-      <div style={style}>
-        <div>flat price</div>
-        <div>flat name</div>
-        <div>flat location</div>
+// const flatUrl = `url(${flats.imageUrl})`;
+const flatUrl = `url('https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/images/flat${this.props.id}.jpg')`;
+
+class Flat extends Component {
+  render() {
+    return (
+      <div className="flat">
+        <div style={{ backgroundImage: flatUrl }}>
+          <div>flat price</div>
+          <div>flat name</div>
+          <div>flat location</div>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Flat;
