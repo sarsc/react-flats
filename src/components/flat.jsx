@@ -7,9 +7,8 @@ class Flat extends Component {
     const flatUrl = `url('${this.props.flat.imageUrl}')`;
     return (
       <div className="card" style={{ backgroundImage: flatUrl }}>
-        <div className="card-category">{this.props.flat.price}</div>
+        <div className="card-category">{this.props.flat.price} {this.props.flat.priceCurrency}</div>
         <div className="card-description">{this.props.flat.name}</div>
-        <div>flat location</div>
       </div>
     );
   }

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 
-import flats from '../data/flats.js';
+import flats from '../data/flats';
 
-import Flat from './flat.jsx';
-import FlatList from './flat_list.jsx';
-
+import FlatList from './flat_list';
+import FlatsMap from './flats_map';
 
 class App extends Component {
   constructor(props) {
@@ -22,7 +21,9 @@ class App extends Component {
         <div className="section-left flat-list">
           <FlatList flats={this.state.flats} />
         </div>
-        <div className="section-right" />
+        <div className="section-right map-container">
+          <FlatsMap />
+        </div>
       </div>
     );
   }
