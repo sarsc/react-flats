@@ -11,16 +11,16 @@ class App extends Component {
     super(props);
 
     this.state = {
-      flatId: flats[0]
+      selectedFlat: flats[0],
+      flats
     };
   }
-debugger
+
   render() {
     return (
       <div>
-        <div className="section-left">
-          <FlatList />
-          <Flat id={this.state.flatId} />
+        <div className="section-left flat-list">
+          <FlatList flats={this.state.flats} />
         </div>
         <div className="section-right" />
       </div>

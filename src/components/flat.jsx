@@ -2,18 +2,14 @@ import React, { Component } from 'react';
 
 import flats from '../data/flats.js';
 
-// const flatUrl = `url(${flats.imageUrl})`;
-const flatUrl = `url('https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/images/flat${this.props.id}.jpg')`;
-
 class Flat extends Component {
   render() {
+    const flatUrl = `url('${this.props.flat.imageUrl}')`;
     return (
-      <div className="flat">
-        <div style={{ backgroundImage: flatUrl }}>
-          <div>flat price</div>
-          <div>flat name</div>
-          <div>flat location</div>
-        </div>
+      <div className="card" style={{ backgroundImage: flatUrl }}>
+        <div className="card-category">{this.props.flat.price}</div>
+        <div className="card-description">{this.props.flat.name}</div>
+        <div>flat location</div>
       </div>
     );
   }

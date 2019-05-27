@@ -1,14 +1,13 @@
 import React from 'react';
 
-import flats from '../data/flats.js';
-
 import Flat from './flat.jsx';
 
-const FlatList = () => {
-  return (
-    <div>
 
-    </div>
+const FlatList = (props) => {
+  return (
+    props.flats.map((flat) => {
+      return <Flat flat={flat} />;
+    })
   );
 };
 
