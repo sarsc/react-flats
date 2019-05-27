@@ -3,13 +3,13 @@ import GoogleMapReact from 'google-map-react';
 
 import GM_API_KEY from './config_key';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const Marker = () => <div className="marker" />;
 
 class FlatsMap extends Component {
   static defaultProps = {
     center: {
-      lat: 59.95,
-      lng: 30.33
+      lat: 51.50,
+      lng: 0.12
     },
     zoom: 11
   };
@@ -23,9 +23,9 @@ class FlatsMap extends Component {
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
-          <AnyReactComponent
-            lat={59.955413}
-            lng={30.337844}
+          <Marker
+            lat={51.5074}
+            lng={0.1278}
             text="My Marker"
           />
         </GoogleMapReact>

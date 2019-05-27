@@ -22,7 +22,7 @@ class App extends Component {
           <FlatList flats={this.state.flats} />
         </div>
         <div className="section-right map-container">
-          <FlatsMap />
+          <FlatsMap selectedFlat={this.selectedFlat} />
         </div>
       </div>
     );
