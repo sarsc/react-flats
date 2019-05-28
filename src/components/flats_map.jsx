@@ -1,38 +1,37 @@
-import React, { Component } from 'react';
+import React from 'react';
 import GoogleMapReact from 'google-map-react';
 
 import GM_API_KEY from './config_key';
 
-const Marker = () => <div className="marker" />;
+const marker = (props) => {
+  // TO DO: display markers only when flat selected
+  <div
+    lat={props.selectedFlat.lat}
+    lng={props.selectedFlat.lat}
+    text="My Marker"
+    selectedFlat={props.selectedFlat}
+  />;
+};
 
-class FlatsMap extends Component {
-  static defaultProps = {
-    center: {
-      lat: 51.50,
-      lng: 0.12
-    },
-    zoom: 11
+const FlatsMap = (props) => {
+  const center = {
+    lat: props.selectedFlat.lat,
+    lng: props.selectedFlat.lng
   };
 
-  render() {
-    return (
-      // Important! Always set the container height explicitly
-      <div style={{ height: '100vh', width: '100%' }}>
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: GM_API_KEY }}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
-        >
-          <Marker
-            lat={this.props.selectedFlat.lat}
-            lng={this.props.selectedFlat.lat}
-            text="My Marker"
-            selectedFlat={this.props.selectedFlat}
-          />
-        </GoogleMapReact>
-      </div>
-    );
-  }
-}
+  return (
+    <div style={{ height: '100vh', width: '100%' }}>
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: GM_API_KEY }}
+        center={center}
+        zoom={13}
+      >
+        <div className="marker">
+          {marker}
+        </div>
+      </GoogleMapReact>
+    </div>
+  );
+};
 
 export default FlatsMap;
