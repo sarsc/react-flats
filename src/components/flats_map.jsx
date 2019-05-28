@@ -24,9 +24,10 @@ class FlatsMap extends Component {
           defaultZoom={this.props.zoom}
         >
           <Marker
-            lat={51.5074}
-            lng={0.1278}
+            lat={this.props.selectedFlat.lat}
+            lng={this.props.selectedFlat.lat}
             text="My Marker"
+            selectedFlat={this.props.selectedFlat}
           />
         </GoogleMapReact>
       </div>

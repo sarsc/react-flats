@@ -15,14 +15,24 @@ class App extends Component {
     };
   }
 
+  selectFlat = (index) => {
+    this.setState({
+      selectedFlat: flats[index]
+    });
+  };
+
   render() {
     return (
       <div>
         <div className="section-left flat-list">
-          <FlatList flats={this.state.flats} />
+          <FlatList
+            flats={this.state.flats}
+            selectFlat={this.selectFlat}
+            selectedFlat={this.state.selectedFlat}
+          />
         </div>
         <div className="section-right map-container">
-          <FlatsMap selectedFlat={this.selectedFlat} />
+          <FlatsMap selectedFlat={this.state.selectedFlat} />
         </div>
       </div>
     );
